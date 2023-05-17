@@ -5,7 +5,7 @@ while True:
     match user_action:
         case 'add':
             todo = input("Enter a Todo: ") + "\n"
-            
+
             file = open('todos.txt', 'r')
             todos = file.readlines()
             file.close()
@@ -14,14 +14,17 @@ while True:
             file = open('todos.txt', 'w')
             file.writelines(todos)
 
-        
         case 'show':
+            file = open('todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
+
             for index, item in enumerate(todos):
                 print(f"{index + 1}-{item}")
-                
+
         case 'edit':
             number = int(input("Enter the number of TODO you want to edit: "))
-            number = number - 1 
+            number = number - 1
             new_todo = input("Enter new TODO: ")
             todos[number] = new_todo
 
