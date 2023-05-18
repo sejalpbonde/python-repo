@@ -1,5 +1,7 @@
 # from functions import get_todos, write_todos
 import functions
+import time
+
 while True:
     user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
@@ -15,7 +17,7 @@ while True:
     elif user_action.startswith('show'):
         todos = functions.get_todos()
 
-        # new_todos = [item.strip("\n") for item in todos]
+        # new_todos = [item.strip("\n") for item in todos]   -> This is list comprehension
 
         for index, item in enumerate(todos):
             item = item.strip("\n")
